@@ -1,5 +1,4 @@
 # fscrub
-> universal scrub experience with touch / mouse across browsers
 
 ## Why?
 
@@ -74,3 +73,28 @@ A release function to let you unlisten the scrub actions of the node.
 
 do what you need to do in the handlers `onStart`, `onMove` and `onEnd` to render changes of UI.
 
+
+# ftap
+> cross-browser click / single touch / hover handler
+
+## Usage
+
+```js
+ftap(domNode, {
+  // for single touch
+  onTouchDown(event) { /*...*/ },
+  onTouchUp(event) { /*...*/ },
+  onTouchClick(event) { /*...*/ },
+
+  // for mouse click
+  onMouseDown(event) { /*...*/ },
+  onMouseUp(event) { /*...*/ },
+  onMouseClick(event) { /*...*/ },
+
+  // for mouse hover
+  onHoverEnter(event) { /*...*/ },
+  onHoverLeave(event) { /*...*/ },
+})
+```
+
+the kind of `event` may be one of the input events (`PointerEvent`, `TouchEvent`, `MouseEvent`), depends on what really fired by browser.
