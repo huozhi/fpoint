@@ -1,0 +1,36 @@
+{
+  "name": "fpoint",
+  "version": "0.2.0",
+  "description": "universal scrub listener for devices support mouse or touch",
+  "main": "dist/fpoint.js",
+  "module": "dist/fpoint.esm.js",
+  "scripts": {
+    "build": "bunchee src/index.js"
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huozhi/fpoint.git"
+  },
+  "keywords": [
+    "touch",
+    "scrub",
+    "tap",
+    "click",
+    "hover",
+    "cross-browser",
+    "universal"
+  ],
+  "author": "huozhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huozhi/fpoint/issues"
+  },
+  "homepage": "https://github.com/huozhi/fpoint#readme",
+  "devDependencies": {
+    "bunchee": "^0.3.0"
+  }
+}
