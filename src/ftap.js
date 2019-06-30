@@ -1,19 +1,15 @@
-const isPointerSupported = Boolean(window.PointerEvent)
-const isTouchSupported = Boolean(window.TouchEvent)
+import {
+  safeCall,
+  isMouseTypeEvent, 
+  isTouchTypeEvent, 
+  isPointerSupported,
+  isTouchSupported
+} from './helper'
+
 const mouseEvents = ['mousedown', 'mouseup']
 const touchEvents = ['touchstart', 'touchend']
 const pointerEvents = ['pointerdown', 'pointerup']
-
 const hoverEvents = isPointerSupported ? ['pointerenter', 'pointerleave'] : ['mouseenter', 'mouseleave']
-
-const isMouseTypeEvent = e => e.pointerType === 'mouse' || (e instanceof window.MouseEvent)
-const isTouchTypeEvent = e => e.pointerType === 'touch' || (e instanceof window.TouchEvent)
-
-function safeCall(fn) {
-  return (...args) => {
-    (typeof fn === 'function') && fn(...args)
-  }
-}
 
 function ulick(node, {
   onTouchDown,

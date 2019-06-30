@@ -31,6 +31,6 @@
   },
   "homepage": "https://github.com/huozhi/fpoint#readme",
   "devDependencies": {
-    "bunchee": "^0.3.0"
+    "bunchee": "^0.3.1"
   }
 }
