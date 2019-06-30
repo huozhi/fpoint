@@ -1,6 +1,10 @@
-# fscrub
+# fpoint
+> 
 
-## Why?
+
+## fscrub
+
+### Why?
 
 Different browsers have different support on touch experience, egde, chrome, safari have their own implementation of touch support and the events stack may not be expected on touchable devices. Especially sometimes we only want to do a simple scrub. Why can't the scrub action be easy as the click with mouse on desktop?
 
@@ -22,7 +26,7 @@ Since chrome and edge both support `PointerEvent`, safari and chrome both suppor
 fscrub is used to resolve the diffculties and let you write less code.
 
 
-## Usage
+### Usage
 
 ```html
 <div class="scrub__baseline">
@@ -46,7 +50,7 @@ fscrub(
 )
 ```
 
-## `fsrcub`
+### API
 
 ```js
 fscrub(
@@ -60,24 +64,24 @@ fscrub(
 )
 ```
 
-### Arguments
+#### Arguments
 
 * `node` is the scrubble dom node you want to track the scrub moves.
 * `handles` is an `object`. which may carry `onStart`, `onMove` and `onEnd` for different scrub phases.
 * `option` is an `object`.
   `option.mouse` will enable triggering scrub events when playing with mouse, `option.touch` is for finger touch. if you specify `option.hover` to `true`, it will turn `option.mouse` to false. since the behavior have conflicts
 
-### Returns
+#### Returns
 
 A release function to let you unlisten the scrub actions of the node.
 
 do what you need to do in the handlers `onStart`, `onMove` and `onEnd` to render changes of UI.
 
 
-# ftap
+## ftap
 > cross-browser click / single touch / hover handler
 
-## Usage
+### Usage
 
 ```js
 ftap(domNode, {
