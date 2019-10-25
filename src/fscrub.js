@@ -1,7 +1,8 @@
 import {
-  isPointerSupported, 
+  isPointerSupported,
   isMouseTypeEvent,
   isTouchTypeEvent,
+  safeCall,
 } from './helper'
 
 const pointerScrubEvents = ['pointerdown', 'pointermove', 'pointerup']
