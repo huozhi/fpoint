@@ -1,4 +1,4 @@
-import {ftap} from 'https://cdn.jsdelivr.net/gh/huozhi/fpoint@master/src/index.js'
+import {ftap} from 'https://cdn.jsdelivr.net/gh/huozhi/fpoint@master/src/ftap.js'
 
 const animatingClsSelector = 'touch__point--flicking'
 const fadingClsSelector = 'hover__pad--fading'

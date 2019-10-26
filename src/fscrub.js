@@ -3,7 +3,7 @@ import {
   isMouseTypeEvent,
   isTouchTypeEvent,
   safeCall,
-} from './helper'
+} from './helper.js'
 
 const pointerScrubEvents = ['pointerdown', 'pointermove', 'pointerup']
 const touchScrubEvents = ['touchstart', 'touchmove', 'touchend']

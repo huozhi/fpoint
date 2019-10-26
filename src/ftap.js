@@ -4,7 +4,7 @@ import {
   isTouchTypeEvent, 
   isPointerSupported,
   isTouchSupported
-} from './helper'
+} from './helper.js'
 
 const mouseEvents = ['mousedown', 'mouseup']
 const touchEvents = ['touchstart', 'touchend']
