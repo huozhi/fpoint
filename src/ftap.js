@@ -1,9 +1,10 @@
 import {
   safeCall,
-  isMouseTypeEvent, 
-  isTouchTypeEvent, 
+  isMouseTypeEvent,
+  isTouchTypeEvent,
   isPointerSupported,
-  isTouchSupported
+  isTouchSupported,
+  isPureMouseTypeEvent
 } from './helper.js'
 
 const mouseEvents = ['mousedown', 'mouseup']
@@ -50,11 +51,11 @@ function ulick(node, {
   }
 
   function handleHoverEnter(e) {
-    if (isMouseTypeEvent(e)) safeCall(onHoverEnter)(e)
+    if (isPureMouseTypeEvent(e)) safeCall(onHoverEnter)(e)
   }
 
   function handleHoverLeave(e) {
-    if (isMouseTypeEvent(e)) safeCall(onHoverLeave)(e)
+    if (isPureMouseTypeEvent(e)) safeCall(onHoverLeave)(e)
   }
 
   const isClickUseCapture = Boolean(
