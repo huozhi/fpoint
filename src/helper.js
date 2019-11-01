@@ -1,8 +1,9 @@
+const isMouseSupported = Boolean(window.MouseEvent)
 const isTouchSupported = Boolean(window.TouchEvent)
 const isPointerSupported = Boolean(window.PointerEvent)
 
-const isMouseTypeEvent = e => e.pointerType === 'mouse' || (e instanceof window.MouseEvent)
-const isTouchTypeEvent = e => e.pointerType === 'touch' || (e instanceof window.TouchEvent)
+const isMouseTypeEvent = e => e.pointerType === 'mouse' || (isMouseSupported && e instanceof window.MouseEvent)
+const isTouchTypeEvent = e => e.pointerType === 'touch' || (isTouchSupported && e instanceof window.TouchEvent)
 
 function safeCall(fn) {
   return (...args) => {
