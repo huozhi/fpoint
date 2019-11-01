@@ -2,6 +2,7 @@ import {
   isPointerSupported,
   isMouseTypeEvent,
   isTouchTypeEvent,
+  isPureMouseTypeEvent,
   safeCall,
 } from './helper.js'
 
@@ -45,14 +46,14 @@ function fscrub(
     isMoving = true
     if (isMouseEnabled && isMouseTypeEvent(e)) onStart(e)
     if (isTouchEnabled && isTouchTypeEvent(e)) onStart(e)
-    if (isHoverEnabled && isMouseTypeEvent(e)) onStart(e)
+    if (isHoverEnabled && isPureMouseTypeEvent(e)) onStart(e)
   }
 
   function handleMove(e) {
     if (isMoving) {
       if (isMouseEnabled && isMouseTypeEvent(e)) onMove(e)
       if (isTouchEnabled && isTouchTypeEvent(e)) onMove(e)
-      if (isHoverEnabled && isMouseTypeEvent(e)) onMove(e)
+      if (isHoverEnabled && isPureMouseTypeEvent(e)) onMove(e)
     }
   }
 
@@ -60,7 +61,7 @@ function fscrub(
     if (isMoving) {
       if (isMouseEnabled && isMouseTypeEvent(e)) onEnd(e)
       if (isTouchEnabled && isTouchTypeEvent(e)) onEnd(e)
-      if (isHoverEnabled && isMouseTypeEvent(e)) onEnd(e)
+      if (isHoverEnabled && isPureMouseTypeEvent(e)) onEnd(e)
       isMoving = false
     }
   }
