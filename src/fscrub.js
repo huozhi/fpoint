@@ -57,10 +57,12 @@ function fscrub(
   }
 
   function handleEnd(e) {
-    isMoving = false
-    if (isMouseEnabled && isMouseTypeEvent(e)) onEnd(e)
-    if (isTouchEnabled && isTouchTypeEvent(e)) onEnd(e)
-    if (isHoverEnabled && isMouseTypeEvent(e)) onEnd(e)
+    if (isMoving) {
+      if (isMouseEnabled && isMouseTypeEvent(e)) onEnd(e)
+      if (isTouchEnabled && isTouchTypeEvent(e)) onEnd(e)
+      if (isHoverEnabled && isMouseTypeEvent(e)) onEnd(e)
+      isMoving = false
+    }
   }
 
   node.addEventListener(startEvent, handleStart)
