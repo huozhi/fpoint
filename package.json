@@ -1,6 +1,6 @@
 {
   "name": "fpoint",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "universal scrub listener for devices support mouse or touch",
   "main": "dist/fpoint.js",
   "module": "dist/fpoint.esm.js",
