@@ -67,25 +67,25 @@ function fscrub(
   }
 
   node.addEventListener(startEvent, handleStart)
-  node.addEventListener(moveEvent, handleMove)
+  endElement.addEventListener(moveEvent, handleMove)
   endElement.addEventListener(endEvent, handleEnd)
 
   !hover && node.addEventListener(cancelEvent, handleEnd)
 
   if (!isPointerSupported && isMouseEnabled) {
     node.addEventListener('mousedown', handleStart)
-    node.addEventListener('mousemove', handleMove)
+    endElement.addEventListener('mousemove', handleMove)
     endElement.addEventListener('mouseup', handleEnd)
   }
 
   return function release() {
     node.removeEventListener(startEvent, handleStart)
-    node.removeEventListener(moveEvent, handleStart)
+    endElement.removeEventListener(moveEvent, handleStart)
     endElement.removeEventListener(endEvent, handleStart)
 
     if (!isPointerSupported && isMouseEnabled) {
       node.removeEventListener('mousedown', handleStart)
-      node.removeEventListener('mousemove', handleMove)
+      endElement.removeEventListener('mousemove', handleMove)
       endElement.removeEventListener('mouseup', handleEnd)
     }
 
