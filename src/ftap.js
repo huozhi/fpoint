@@ -45,8 +45,8 @@ function ulick(node, {
     if (isTouchTypeEvent(e)) safeCall(onTouchUp)(e)
     if (sticking) {
       sticking = false
-      if (isMouseTypeEvent(e)) safeCall(onTouchClick)(e)
-      if (isTouchTypeEvent(e)) safeCall(onMouseClick)(e)
+      if (isMouseTypeEvent(e)) safeCall(onMouseClick)(e)
+      if (isTouchTypeEvent(e)) safeCall(onTouchClick)(e)
     }
   }
 
