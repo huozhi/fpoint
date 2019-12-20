@@ -1,8 +1,29 @@
 # fpoint
-> 
+> simple js lib to help you lift touch experience development cross browsers
 
+[![npm version](https://img.shields.io/npm/v/fpoint.svg?style=flat-square)](https://www.npmjs.com/package/fpoint)
+[![npm downloads](https://img.shields.io/npm/dm/fpoint.svg?style=flat-square)](https://www.npmjs.com/package/fpoint)
+
+```js
+import {fscrub, ftap} from 'fpoint'
+
+fscrub(document.querySelector('.slider'), {
+  onStart() {},
+  onMove() {},
+  onEnd() {},
+})
+
+ftap(document.querySelector('.button'), {
+  onTouchClick() {},
+  onMouseClick() {},
+  onHoverEnter() {},
+  onHoverLeave() {},
+})
+```
 
 ## fscrub
+
+Convenient util for cross browser dragging/scrubbing experience
 
 ### Why?
 
@@ -79,7 +100,10 @@ do what you need to do in the handlers `onStart`, `onMove` and `onEnd` to render
 
 
 ## ftap
-> cross-browser click / single touch / hover handler
+Cross-browser click / single touch / hover handler
+
+unlike **fscrub**, **ftap** is just used to detect finger touch, mouse click and mouse hover. usually we need different experience between hover and touch. since with touch devices we don't have hover options, and **ftap** help you distinguish different input sources, make each interaction type easy to be monitored
+
 
 ### Usage
 
