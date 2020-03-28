@@ -1,4 +1,4 @@
-import {ftap} from 'https://unpkg.com/fpoint@0.2.0/dist/fpoint.esm.js'
+import {ftap} from 'https://unpkg.com/fpoint/dist/fpoint.esm.js'
 
 const animatingClsSelector = 'touch__point--flicking'
 const fadingClsSelector = 'hover__pad--fading'

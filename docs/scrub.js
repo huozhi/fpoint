@@ -1,4 +1,4 @@
-import {fscrub} from 'https://unpkg.com/fpoint@0.2.0/dist/fpoint.esm.js'
+import {fscrub} from 'https://unpkg.com/fpoint/dist/fpoint.esm.js'
 
 const logs = []
 const logNode = document.getElementById('logs')
