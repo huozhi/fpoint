@@ -5,20 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>fpoint</title>
+<style>
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a,
+a:active {
+  text-decoration: none;
+  color: #3d6684;
+}
+
+a:hover {
+  color: #89a6da;
+  cursor: pointer;
+}
+
+a::before {
+  content: '>';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  color: inherit;
+  margin-right: 8px;
+}
+
+a h4 {
+ display: inline-block;
+}
+
+code pre {
+  background: #fafafa;
+  padding: 16px 8px;
+}
+
+</style>
 </head>
 <body>
   <div style="margin: auto; max-width: 690px;">
-    <h1>Select the experimental demo</h1>
+    <h1>fpoint</h1>
+    <h2>examples</h2>
     <div>
       <ul>
         <li>
-          <a href='./scrub'><h3>fscrub</h3></a>  
+          <a href='./scrub'>
+            <h4>fscrub</h4>
+            <small>experience continuous dragging / scrubbing on the screen</small>
+          </a>
         </li>
         <li>
-          <a href='./tap'><h3>ftap</h3></a>  
+          <a href='./tap'>
+            <h4>ftap</h4>
+            <small>distinguish among figure tap (touch) / click / mouse hover on the screen</small>
+          </a>
         </li>
       </ul>
     </div>
+    <h2>usage</h2>
+    <code>
+      <pre>
+import {fscrub, ftap} from 'fpoint'
+
+fscrub(document.querySelector('.slider'), {
+  onStart() {},
+  onMove() {},
+  onEnd() {},
+})
+
+ftap(document.querySelector('.button'), {
+  onTouchClick() {},
+  onMouseClick() {},
+  onHoverEnter() {},
+  onHoverLeave() {},
+})
+      </pre>
+    </code>
   </div>
 </body>
 </html>
