@@ -4,6 +4,7 @@
   "description": "universal scrub listener for devices support mouse or touch",
   "main": "dist/fpoint.js",
   "module": "dist/fpoint.esm.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "bunchee src/index.js"
   },

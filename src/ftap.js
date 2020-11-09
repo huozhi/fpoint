@@ -12,7 +12,7 @@ const touchEvents = ['touchstart', 'touchend']
 const pointerEvents = ['pointerdown', 'pointerup']
 const hoverEvents = isPointerSupported ? ['pointerenter', 'pointerleave'] : ['mouseenter', 'mouseleave']
 
-function ulick(node, {
+function ftap(node, {
   onTouchDown,
   onTouchDownCapture,
   onTouchUp,
@@ -107,4 +107,4 @@ function ulick(node, {
   }
 }
 
-export default ulick
+export default ftap
