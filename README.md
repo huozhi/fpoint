@@ -4,6 +4,14 @@
 [![npm version](https://img.shields.io/npm/v/fpoint.svg?style=flat-square)](https://www.npmjs.com/package/fpoint)
 [![npm downloads](https://img.shields.io/npm/dm/fpoint.svg?style=flat-square)](https://www.npmjs.com/package/fpoint)
 
+### Install
+
+```sh
+npm i -S fpoint
+```
+
+### Usage
+
 ```js
 import {fscrub, ftap} from 'fpoint'
 
@@ -126,3 +134,8 @@ ftap(domNode, {
 ```
 
 the kind of `event` may be one of the input events (`PointerEvent`, `TouchEvent`, `MouseEvent`), depends on what really fired by browser.
+
+
+### Derivative
+
+For React.js integration, you can checkout [react-fpoint](https://github.com/huozhi/react-fpoint) as alternative.
