@@ -1,12 +1,123 @@
-import { ftap } from 'fpoint'
 import { useEffect, useRef, useState } from 'react'
+import { ftap } from 'fpoint'
+import { Tap } from 'fpoint/react'
 
-export default function TapPage() {
+function TapExample() {
+  const [glitterState, setGlitterState] = useState({visible: false})
+  const [position, setPosition] = useState({x: 0, y: 0})
+  const ref = useRef(null)
+  
+  function setGlitterPosition(event, type) {
+    const {offsetX, pageY} = event
+    setPosition({x: offsetX , y: pageY - ref.current.getBoundingClientRect().top - window.scrollY})
+    setGlitterState({type, visible: true})
+  }
+  
+  return (
+    <div className='tap-example'>
+      <style jsx>{`
+      .tap-example {
+        position: relative;
+      }
+      
+      @keyframes flick {
+        0% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        10% {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
+      }
+      
+      .glitter {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        transform-origin: center;
+      }
+      .glitter--touch {
+        background: #000;
+        border: 2px solid #fff;
+      }
+      .glitter--animating {
+        animation: flick 0.3s ease-out;
+      }`}</style>
+      <h2>Tap Example</h2>
+      <small>Use mouse or finger (touch screen) to click the square area. Fingerprint will be solid circle when doing mouse click or a hollow circle when you touch it</small>
+      <Tap
+        ref={ref}
+        className='square'
+        style={{
+          position: 'relative',
+          margin: `20px 0`,
+          width: `100%`,
+          height: `200px`,
+          border: `3px solid #fff`,
+        }}
+        onTouchClick={(e) => { setGlitterPosition(e, 'touch') }}
+        onMouseClick={(e) => { setGlitterPosition(e, 'mouse') }}
+      >
+        <span
+          style={{
+            visibility: glitterState.visible ? 'visible' : 'hidden',
+            left: (position.x - 20) + 'px',
+            top: (position.y - 20) + 'px',
+          }}
+          className={
+            `glitter ${glitterState.type ? `glitter--${glitterState.type}` : ''} ${glitterState.visible ? 'glitter--animating' : ''}`
+          } 
+          type={glitterState.type}
+          onAnimationEnd={() => {
+            setGlitterState({visible: false})
+          }}
+        />
+      </Tap>
+       
+      <code>
+        <pre>
+          {`
+import {Tap} from 'fpoint/react'
+
+function handleTouchClick(e) {
+  const {offsetX, offsetY} = e
+  // ...
+}
+
+function handleMouseClick(e) {
+  // ...
+}
+
+return (
+  <Tap
+    onTouchClick={handleTouchClick}
+    onMouseClick={handleMouseClick}
+  >
+    {children}
+  </Tap>
+)
+`}
+        </pre>
+      </code>
+    </div>
+  )  
+}
+
+
+function FtapExample() {
   const [points, setPoints] = useState([])
 
   function flicking(e) {
-    const { pageX, pageY } = e    
-    const point = { pageX, pageY, isMouse: e instanceof window.MouseEvent }
+    const { offsetX, offsetY } = e    
+    const point = { pageX: offsetX, pageY: offsetY, isMouse: e instanceof window.MouseEvent }
+    console.log(e)
     setPoints(points.concat(point))
   }
   
@@ -53,20 +164,25 @@ export default function TapPage() {
     .flex-vertical {
       flex-direction: column;
     }
-    .hover__pad {
-      position: relative;
-      flex: 1 0 200px;
-      background: #efebc8;
-    }
     .touch__pad {
       position: relative;
       flex: 1 0 200px;
       opacity: 1;
-      background: #f3cfcf;
+      // background: #d9ffed;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+      user-select: none;
       transition: all .3s ease-in;
     }
+    .hover__pad {
+      position: relative;
+      flex: 1 0 200px;
+      // background: #efebc8;
+      border: 3px solid #fff;
+      user-select: none;
+    }
     .touch__point {
-      position: fixed;
+      position: absolute;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       opacity: 1;
@@ -84,7 +200,7 @@ export default function TapPage() {
       transform: translate(-50%, -50%);
       max-width: 100vw;
       font-size: 72px;
-      line-height: 40vh;
+      pointer-events: none;
       color: #444;
       font-weight: bolder;
       text-transform: uppercase;
@@ -162,5 +278,14 @@ ftap(document.querySelector('.button'), {
         </code>
       </div>
     </>
+  )
+}
+
+export default function TapExamples() {
+  return (
+    <div>
+      <TapExample />
+      <FtapExample />
+    </div>
   )
 }
