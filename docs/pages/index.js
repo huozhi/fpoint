@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Scrub from '../components/scrub'
 import Tap from '../components/tap'
-import ReactFpoint from '../components/react'
 
 function Tabs() {
   const [tab, setTab] = useState((typeof location !== 'undefined' ? location.hash.replace(/#/, '') : null) || 'scrub')
@@ -35,7 +34,6 @@ function Tabs() {
       <div className='tabs'>
         {tab === 'fscrub' && <Scrub />}
         {tab === 'ftap' && <Tap />}
-        {tab === 'react' && <ReactFpoint />}
       </div>
     </div>
   )
