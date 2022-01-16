@@ -1,3 +1,5 @@
+import React from 'react'
+
 export type HandlerMap = {[key: string]: (e?: Event) => void}
 
 export type ScrubHandlerTypes = {

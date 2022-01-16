@@ -1,4 +1,4 @@
-const win = window || {}
+const win = typeof window !== 'undefined' ? window : {}
 const isMouseSupported = Boolean(win.MouseEvent)
 const isTouchSupported = Boolean(win.TouchEvent)
 const isPointerSupported = Boolean(win.PointerEvent)

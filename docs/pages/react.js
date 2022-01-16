@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { Tap, Scrub } from 'react-fpoint'
+import { Tap, Scrub } from 'fpoint/react'
 
 function Cube({x = 0, y = 0, isActive = false}) {
   return (

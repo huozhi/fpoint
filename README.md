@@ -13,7 +13,7 @@ npm i -S fpoint
 ### Usage
 
 ```js
-import {fscrub, ftap} from 'fpoint'
+import { fscrub, ftap } from 'fpoint'
 
 fscrub(document.querySelector('.slider'), {
   onStart() {},
@@ -149,7 +149,7 @@ npm i -S fpoint react-fpoint
 #### Example
 
 ```js
-import {Scrub} from 'react-fpoint'
+import { Scrub } from 'fpoint/react'
 
 function handleScrubMove(e) {
   const pageX = e.touches ? e.touches[0].pageX : e.pageX
@@ -188,7 +188,7 @@ Other props will be directly applied onto it.
 #### Example
 
 ```js
-import {Tap} from 'react-fpoint'
+import { Tap } from 'fpoint/react'
 
 function handleTouchClick(e) {
   const {offsetX, offsetY} = e

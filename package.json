@@ -1,19 +1,48 @@
 {
-  "private": true,
-  "workspaces": [
-    "./packages/fpoint",
-    "./packages/react-fpoint"
-  ],
+  "name": "fpoint",
+  "version": "0.2.7",
+  "description": "universal scrub listener for devices support mouse or touch",
+  "main": "./dist/fpoint.js",
+  "module": "./dist/fpoint.esm.js",
+  "types": "index.d.ts",
   "scripts": {
-    "build": "yarn workspace fpoint build && yarn workspace react-fpoint build",
-    "build:docs": "yarn build && yarn next build ./docs"
+    "build": "yarn build:core && yarn build:react",
+    "build:core": "bunchee src/index.js",
+    "build:react": "bunchee src/index.ts --cwd ./react"
   },
+  "files": [
+    "dist",
+    "rect/dist",
+    "rect/package.json",
+    "*.d.ts",
+    "*.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huozhi/fpoint.git"
+  },
+  "keywords": [
+    "touch",
+    "scrub",
+    "tap",
+    "click",
+    "hover",
+    "cross-browser",
+    "universal"
+  ],
+  "author": "huozhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huozhi/fpoint/issues"
+  },
+  "homepage": "https://github.com/huozhi/fpoint#readme",
   "devDependencies": {
     "@types/react": "^17.0.38",
+    "bunchee": "^1.8.2",
+    "fpoint": "link:.",
     "next": "^12.0.8",
-    "react": "^18.0.0-rc.0",
-    "react-dom": "^18.0.0-rc.0",
-    "fpoint": "link:./packages/fpoint",
-    "react-fpoint": "link:./packages/react-fpoint"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.5.4"
   }
 }
