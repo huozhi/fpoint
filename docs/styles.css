@@ -11,12 +11,6 @@ body {
 html,
 body {
   margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
   -webkit-overflow-scrolling: auto;
 }
 
@@ -40,11 +34,3 @@ a h4 {
  display: inline-block;
 }
 
-code pre {
-  background: #fafafa;
-  padding: 16px 8px;
-}
-
-.index {
-  margin: auto; max-width: 690px;
-}

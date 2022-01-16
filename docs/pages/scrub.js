@@ -89,7 +89,7 @@ export default function ScrubPage() {
     <div>
       <style jsx>
         {`
-        #app {
+        .root {
           margin: auto;
           position: relative;
           width: 100%;
@@ -97,16 +97,13 @@ export default function ScrubPage() {
           padding: 0 20px;
           height: 100%;
         }
-        
-        #logs {
-          position: absolute;
-          bottom: 20px;
-          right: 20px;
+
+        .title {
+          margin: 1em 0 2em;
         }
-        
+
         .scrub {
-          margin-top: 60px;
-          margin-left: 12px;
+          margin: 60px 12px;
           width: 350px;
           height: 12px;
           background: #8f8f8f;
@@ -154,10 +151,11 @@ export default function ScrubPage() {
       </a>
       <div className="scrub__indicator" ref={indicatorRef} style={{ width: typeof window === 'undefined' ? '0%' : `${100 * positions.percent}%` }} />
 
-      <div id="app">
-        <h1>
+      <div className="root">
+        <h1 className="title">
           Universal Scrub Experience
         </h1>
+        <br />
         <div className="togglers">
           <div><input type="checkbox" checked={isMouse} onChange={(e) => setIsMouse(e.target.checked)} id="mouse-toggler" /> Enable Mouse Support</div>
           <div><input type="checkbox" checked={isTouch} onChange={(e) => setIsTouch(e.target.checked)} id="touch-toggler" /> Enable Touch Support</div>
@@ -171,6 +169,22 @@ export default function ScrubPage() {
         <div className="scrub" ref={scrubRef}>
           <div className="scrub__head" ref={blockRef} style={{ transform: `translate(${positions.offsetX}px, -50%)` }} />
         </div>
+        
+        <h2>Usage</h2>
+        <code>
+          <pre>
+          {`
+  import { fscrub } from 'fpoint'
+
+  fscrub(document.querySelector('.slider'), {
+    onStart() {},
+    onMove() {},
+    onEnd() {},
+  })
+
+  `}
+          </pre>
+        </code>
       </div>
     </div>
   )
