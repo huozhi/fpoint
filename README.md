@@ -137,11 +137,8 @@ the kind of `event` may be one of the input events (`PointerEvent`, `TouchEvent`
 
 ## Use with React
 
-`react-fpoint` provides a set of react components make mouse & touching easier.
+`fpoint/react` provides a set of react components make mouse & touching easier.
 
-```sh
-npm i -S fpoint react-fpoint
-```
 ### `<Scurb>`
 
 `Scrub` component let you to easily attach handlers to track mouse dragging or finger scrubbing interactions. You could use it to build your custom slider, touch screen or any other advanced components you like.

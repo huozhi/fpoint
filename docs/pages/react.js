@@ -141,7 +141,7 @@ function TapExample() {
       <code>
         <pre>
           {`
-import {Tap} from 'react-fpoint'
+import {Tap} from 'fpoint/react'
 
 function handleTouchClick(e) {
   const {offsetX, offsetY} = e
@@ -252,7 +252,7 @@ function ScrubExample() {
       <code>
         <pre>
           {`
-import {Scrub} from 'react-fpoint'
+import {Scrub} from 'fpoint/react'
 
 function handleScrubMove(e) {
   const pageX = e.touches ? e.touches[0].pageX : e.pageX
