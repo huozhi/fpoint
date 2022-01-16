@@ -1,9 +1,10 @@
-const isMouseSupported = Boolean(window.MouseEvent)
-const isTouchSupported = Boolean(window.TouchEvent)
-const isPointerSupported = Boolean(window.PointerEvent)
+const win = typeof window !== 'undefined' ? window : {}
+const isMouseSupported = Boolean(win.MouseEvent)
+const isTouchSupported = Boolean(win.TouchEvent)
+const isPointerSupported = Boolean(win.PointerEvent)
 
-const isMouseTypeEvent = e => e.pointerType === 'mouse' || (isMouseSupported && e instanceof window.MouseEvent)
-const isTouchTypeEvent = e => e.pointerType === 'touch' || (isTouchSupported && e instanceof window.TouchEvent)
+const isMouseTypeEvent = e => e.pointerType === 'mouse' || (isMouseSupported && e instanceof win.MouseEvent)
+const isTouchTypeEvent = e => e.pointerType === 'touch' || (isTouchSupported && e instanceof win.TouchEvent)
 
 /*
  * isPureMouseTypeEvent
@@ -12,8 +13,8 @@ const isTouchTypeEvent = e => e.pointerType === 'touch' || (isTouchSupported && 
  * case 3: pure mouse event, pointer supported but it's not pointer event instance
  */
 const isPureMouseTypeEvent = e => e.pointerType === 'mouse' ||
-  (isMouseSupported && e instanceof window.MouseEvent &&
-    (!isPointerSupported || !(e instanceof window.PointerEvent)))
+  (isMouseSupported && e instanceof win.MouseEvent &&
+    (!isPointerSupported || !(e instanceof win.PointerEvent)))
 
 function safeCall(fn) {
   return (...args) => {
