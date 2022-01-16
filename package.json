@@ -6,9 +6,11 @@
   "module": "./dist/fpoint.esm.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "yarn build:core && yarn build:react",
+    "clean": "rm -rf dist && rm -rf react/dist",
+    "build": "yarn clean && yarn build:core && yarn build:react",
     "build:core": "bunchee src/index.js",
-    "build:react": "bunchee src/index.ts --cwd ./react"
+    "build:react": "bunchee src/index.ts --cwd ./react",
+    "dev": "yarn next dev docs"
   },
   "files": [
     "dist",
