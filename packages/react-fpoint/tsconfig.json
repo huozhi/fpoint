@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react",
+    "declaration": true,
+    "removeComments": true,
+    "moduleResolution": "Node",
+    "strict": true,
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

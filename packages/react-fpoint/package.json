@@ -1,0 +1,40 @@
+{
+  "name": "react-fpoint",
+  "version": "0.1.2",
+  "description": "react components for fpoint",
+  "main": "./dist/cjs.js",
+  "module": "./dist/esm.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "rm -rf dist && yarn build",
+    "build": "bunchee src/index.ts --no-sourcemap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/huozhi/react-fpoint.git"
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "keywords": [
+    "react",
+    "gesture",
+    "mouse",
+    "touch"
+  ],
+  "author": "huozhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huozhi/react-fpoint/issues"
+  },
+  "homepage": "https://react-fpoint.vercel.app",
+  "peerDependencies": {
+    "fpoint": "^0.2.8",
+    "react": ">= 16.11.0"
+  },
+  "devDependencies": {
+    "bunchee": "^1.8.2",
+    "typescript": "^4.5.4"
+  }
+}
