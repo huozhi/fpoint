@@ -4,10 +4,16 @@
     "./packages/fpoint",
     "./packages/react-fpoint"
   ],
+  "scripts": {
+    "build": "yarn workspace fpoint build && yarn workspace react-fpoint build",
+    "build:docs": "yarn build && yarn next build ./docs"
+  },
   "devDependencies": {
     "@types/react": "^17.0.38",
     "next": "^12.0.8",
     "react": "^18.0.0-rc.0",
-    "react-dom": "^18.0.0-rc.0"
+    "react-dom": "^18.0.0-rc.0",
+    "fpoint": "link:./packages/fpoint",
+    "react-fpoint": "link:./packages/react-fpoint"
   }
 }

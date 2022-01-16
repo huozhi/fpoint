@@ -135,25 +135,12 @@ ftap(domNode, {
 
 the kind of `event` may be one of the input events (`PointerEvent`, `TouchEvent`, `MouseEvent`), depends on what really fired by browser.
 
+## Use with React
 
-### Derivative
-
-For React.js integration, you can checkout [react-fpoint](https://github.com/huozhi/react-fpoint) as alternative.
-
-
-# React Fpoint
-> A set of react components make mouse & touching easier
-
-![npm-version](https://img.shields.io/npm/v/react-fpoint.svg) ![license](https://img.shields.io/npm/l/react-fpoint.svg)
-
-Checkout the [fpoint](https://github.com/huozhi/fpoint) project for details that how it works internally and why I design this. In a short word it provides you the easy way to handle the mouse and touch interactions individually and flexibly. unlike browser throwing you bunch of native events (pointer, mouse and touch events), fpoint understands how to capture user inputs and recognize them as an action, with the original input source identified.
-
-## Quick Start
-
-[react-fpoint.vercel.app](https://react-fpoint.vercel.app)
+`react-fpoint` provides a set of react components make mouse & touching easier.
 
 ```sh
-npm i -S react-fpoint
+npm i -S fpoint react-fpoint
 ```
 ### `<Scurb>`
 
