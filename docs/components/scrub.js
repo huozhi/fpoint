@@ -231,7 +231,7 @@ function SliderExample() {
         .scrub {
           margin: 60px 12px;
           width: 400;
-          height: 12px;
+          height: 6px;
           background: #fdfdfd;
           position: relative;
           touch-action: none;
@@ -239,8 +239,8 @@ function SliderExample() {
         }
         
         .scrub__head {
-          width: 32px;
-          height: 32px;
+          width: 24px;
+          height: 24px;
           margin-left: -12px;
           position: absolute;
           background: #e6b253;

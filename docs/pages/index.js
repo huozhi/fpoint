@@ -21,7 +21,7 @@ function Tabs() {
       `}
       </style>
       <nav>
-        {['fscrub', 'ftap'].map(tab => (
+        {['scrub', 'tap'].map(tab => (
           <span 
             className='tab' 
             key={tab} 
@@ -32,8 +32,8 @@ function Tabs() {
         ))}
       </nav>
       <div className='tabs'>
-        {tab === 'fscrub' && <Scrub />}
-        {tab === 'ftap' && <Tap />}
+        {tab === 'scrub' && <Scrub />}
+        {tab === 'tap' && <Tap />}
       </div>
     </div>
   )
@@ -54,6 +54,7 @@ export default function Index() {
         
         .index {
           margin: auto; max-width: 690px;
+          padding: 0 16px;
         }
         .main-title {
           font-size: 4rem;
@@ -61,7 +62,6 @@ export default function Index() {
         `
       }</style>
       <h1 className='main-title'>fpoint</h1>
-      <br />
       <h1>APIs & Examples</h1>
       <Tabs />
     </div>
