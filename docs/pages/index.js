@@ -3,8 +3,6 @@ import Head from 'next/head'
 import Scrub from '../components/scrub'
 import Tap from '../components/tap'
 
-const host = process.env.NODE_ENV === 'production' ? `https://fpoint.vercel.app` : ''
-
 function Tabs() {
   const [tab, setTab] = useState('scrub')
   return (
@@ -13,12 +11,12 @@ function Tabs() {
         <title>Fpoint | Easy Interaction</title>
         <meta property='og:title' content='fpoint' />
         <meta property="og:description" content="Make web interaction easy" />
-        <meta property='og:image' content={`${host}/fpoint.png`} />
+        <meta property='og:image' content={`/fpoint.png`} />
         <meta property='og:type' content='website' />
 
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@huozhi' />
-        <meta name='twitter:image' content={`${host}/fpoint.png`} />
+        <meta name='twitter:image' content={`/fpoint.png`} />
       </Head>
       <style jsx>{`
         nav>.tab:not(:first-child) {
