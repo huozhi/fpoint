@@ -4,7 +4,7 @@ import Scrub from '../components/scrub'
 import Tap from '../components/tap'
 
 function Tabs() {
-  const [tab, setTab] = useState((typeof location !== 'undefined' ? location.hash.replace(/#/, '') : null) || 'scrub')
+  const [tab, setTab] = useState('scrub')
   return (
     <div className='app'>
       <Head>
@@ -29,7 +29,9 @@ function Tabs() {
           <span 
             className='tab' 
             key={tab} 
-            onClick={() => { setTab(tab); location.hash = `#${tab}` }}
+            onClick={() => {
+              setTab(tab);
+            }}
           >
             {tab}
           </span>
@@ -70,4 +72,10 @@ export default function Index() {
       <Tabs />
     </div>
   )
+}
+
+
+export async function getServerSideProps(ctx) {
+  // console.log(ctx.req)
+  return { props: { } }
 }

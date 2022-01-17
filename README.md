@@ -188,7 +188,7 @@ Other props will be directly applied onto it.
 import { Tap } from 'fpoint/react'
 
 function handleTouchClick(e) {
-  const {offsetX, offsetY} = e
+  const { offsetX, offsetY } = e
   // ...
 }
 

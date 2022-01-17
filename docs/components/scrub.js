@@ -141,30 +141,6 @@ function CubeExample() {
           />
         </div>
       </Scrub>
-      
-      <h2>Usage</h2>
-      <code>
-        <pre>
-          {`
-import {Scrub} from 'fpoint/react'
-
-function handleScrubMove(e) {
-  const pageX = e.touches ? e.touches[0].pageX : e.pageX
-  const pageY = e.touches ? e.touches[0].pageY : e.pageY
-  
-  // ...
-}
-
-return (
-  <Scrub
-    onScrubMove={handleScrubMove}
-  >
-    {children}
-  </Scrub>
-)
-`}
-        </pre>
-      </code>
     </div>
   )
 }
@@ -268,7 +244,7 @@ function SliderExample() {
       
       <div className="scrub__indicator" ref={indicatorRef} style={{ width: typeof window === 'undefined' ? '0%' : `${100 * positions.percent}%` }} />
       <h2>Slider Example</h2>
-
+      <p>Use mouse or finger to scrub the slider. Change the settings below to toggle different behaviors.</p>
       
       <div className="togglers">
         <div><input type="checkbox" checked={isMouse} onChange={(e) => setIsMouse(e.target.checked)} id="mouse-toggler" /> Enable Mouse</div>
@@ -305,6 +281,8 @@ export default function Page() {
       <SliderExample />
               
       <h2>Usage</h2>
+
+      <h4>{`fscrub()`}</h4>
       <code>
         <pre>
         {`
@@ -316,6 +294,30 @@ fscrub(document.querySelector('.slider'), {
   onEnd() {},
 })
 
+`}
+        </pre>
+      </code>
+
+      <h4>Use with react</h4>
+      <code>
+        <pre>
+          {`
+import {Scrub} from 'fpoint/react'
+
+function handleScrubMove(e) {
+  const pageX = e.touches ? e.touches[0].pageX : e.pageX
+  const pageY = e.touches ? e.touches[0].pageY : e.pageY
+  
+  // ...
+}
+
+return (
+  <Scrub
+    onScrubMove={handleScrubMove}
+  >
+    {children}
+  </Scrub>
+)
 `}
         </pre>
       </code>
