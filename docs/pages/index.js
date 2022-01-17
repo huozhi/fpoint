@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Head from 'next/head'
 import Scrub from '../components/scrub'
 import Tap from '../components/tap'
 
@@ -6,6 +7,9 @@ function Tabs() {
   const [tab, setTab] = useState((typeof location !== 'undefined' ? location.hash.replace(/#/, '') : null) || 'scrub')
   return (
     <div className='app'>
+      <Head>
+        <title>Fpoint | Easy Interaction</title>
+      </Head>
       <style jsx>{`
         nav>.tab:not(:first-child) {
           margin-left: 16px;
