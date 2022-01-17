@@ -9,6 +9,11 @@ function Tabs() {
     <div className='app'>
       <Head>
         <title>Fpoint | Easy Interaction</title>
+        <meta property='og:title' content="fpoint"></meta>
+        <meta property='og:image' content='/fpoint.png' />
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:site" content="@huozhi"></meta>
+        <meta name="twitter:image" content="/fpoint.png"></meta>
       </Head>
       <style jsx>{`
         nav>.tab:not(:first-child) {
