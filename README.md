@@ -1,8 +1,10 @@
 # fpoint
 > simple js lib to help you lift touch experience development cross browsers
 
+> [!WARNING]
+> The browser compatibility problem that fpoint was created to solve is now addressed by native [Pointer Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events), which are widely supported across modern browsers and provide a unified API for mouse, touch, and pen input. Use Pointer Events directly for new projects. This repository will be archived; the documentation below, including the browser compatibility table, reflects the historical context in which fpoint was built.
+
 [![npm version](https://img.shields.io/npm/v/fpoint.svg?style=flat-square)](https://www.npmjs.com/package/fpoint)
-[![npm downloads](https://img.shields.io/npm/dm/fpoint.svg?style=flat-square)](https://www.npmjs.com/package/fpoint)
 
 ### Install
 
@@ -151,7 +153,7 @@ import { Scrub } from 'fpoint/react'
 function handleScrubMove(e) {
   const pageX = e.touches ? e.touches[0].pageX : e.pageX
   const pageY = e.touches ? e.touches[0].pageY : e.pageY
-  
+
   // ...
 }
 
